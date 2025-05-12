@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Оценка квартиры</title>
+</head>
+<body>
+    <h1>Предсказание цены квартиры</h1>
+    <form method="post">
+        <label>Количество комнат:</label><br>
+        <input type="number" name="rooms" step="1" required><br>
+
+        <label>Площадь (м²):</label><br>
+        <input type="number" name="area" step="0.1" required><br>
+
+        <label>Этаж:</label><br>
+        <input type="number" name="floor" required><br>
+
+        <label>Всего этажей в доме:</label><br>
+        <input type="number" name="total_floors" required><br>
+
+        <label>Год постройки:</label><br>
+        <input type="number" name="year" required><br><br>
+
+        <button type="submit">Предсказать</button>
+    </form>
+
+    {% if prediction is not none %}
+        <h2>Ожидаемая цена: {{ prediction }} млн ₸</h2>
+    {% endif %}
+</body>
+</html>
